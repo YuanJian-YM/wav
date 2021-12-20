@@ -55,6 +55,7 @@ func NewEncoder(w io.WriteSeeker, sampleRate, bitDepth, numChans, audioFormat in
 // SetNotHeader set don't need to write the header
 func (e *Encoder) SetNotHeader() {
 	e.wroteHeader = true
+	e.pcmChunkStarted = true
 }
 
 // AddLE serializes and adds the passed value using little endian
